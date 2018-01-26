@@ -10,12 +10,45 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'username'   => 'string', 
+        'first_name' => 'string',
+        'last_name'  => 'string',
+        'email'      => 'string', 
+        'password'   => 'string',
+        'company_id' => 'int',
+    ];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 
+        'first_name',
+        'last_name',
+        'email', 
+        'password',
+        'company_id',
+    ];
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'username'   => 'required|string', 
+        'first_name' => 'required|string',
+        'last_name'  => 'required|string',
+        'email'      => 'required|string', 
+        'password'   => 'required|string',
+        'company_id' => 'nullable|int',
     ];
 
     /**
@@ -24,6 +57,17 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 
+        'remember_token',
     ];
+
+    /**
+     * The company relation.
+     * 
+     * @return \App\Company
+     */
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
