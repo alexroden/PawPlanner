@@ -17,6 +17,21 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+window.Event = new Vue();
+
+((win, doc, $, undefined) => {
+  new Vue({
+      el: '#app',
+      data() {
+          return {
+              //
+          }
+      },
+      mounted() {
+          //
+      },
+      methods: {
+          //
+      }
+  })
+})(window, document, jQuery)
