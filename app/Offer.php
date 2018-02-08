@@ -59,5 +59,5 @@ class Offer extends Model
     public function plan()
     {
         return $this->hasOne(Plan::class);
-    }€@
+    }
 }
