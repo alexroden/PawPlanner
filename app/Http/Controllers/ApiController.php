@@ -27,5 +27,7 @@ class ApiController extends AbstractApiController
         if ($offer->valid_from <= Carbon::now() && $offer->valid_to >= Carbon::now()) {
             return $this->item($offer);
         }
+
+        return $this->noContent();
     }
 }
