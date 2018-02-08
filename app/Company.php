@@ -13,6 +13,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * This is the company class.
+ *
+ * @author Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ */
 class Company extends Model
 {
     /**

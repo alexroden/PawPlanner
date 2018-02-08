@@ -14,6 +14,11 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * This is the boardcast service provider class.
+ *
+ * @author Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ */
 class BroadcastServiceProvider extends ServiceProvider
 {
     /**

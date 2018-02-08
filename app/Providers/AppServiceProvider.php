@@ -13,6 +13,11 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * This is the app service provider class.
+ *
+ * @author Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ */
 class AppServiceProvider extends ServiceProvider
 {
     /**

@@ -14,6 +14,11 @@ namespace App\Http\Middleware;
 use Fideloper\Proxy\TrustProxies as Middleware;
 use Illuminate\Http\Request;
 
+/**
+ * This is the trust proxies class.
+ *
+ * @author Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ */
 class TrustProxies extends Middleware
 {
     /**

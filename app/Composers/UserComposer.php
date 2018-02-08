@@ -15,7 +15,7 @@ use App\Plan;
 use Illuminate\View\View;
 
 /**
- * This is the user composer.
+ * This is the user composer class.
  *
  * @author Alex Broom-Roden <b.r_alex@hotmail.co.uk>
  */

@@ -13,6 +13,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * This is the offer class.
+ *
+ * @author Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ */
 class Offer extends Model
 {
     /**
