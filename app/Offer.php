@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -14,7 +23,7 @@ class Offer extends Model
     protected $casts = [
         'name'        => 'string',
         'promocode'   => 'string',
-        'value'       => 'float', 
+        'value'       => 'float',
         'description' => 'string',
         'valid_from'  => 'date',
         'valid_to'    => 'date',
@@ -29,7 +38,7 @@ class Offer extends Model
     protected $fillable = [
         'name',
         'promocode',
-        'value', 
+        'value',
         'description',
         'valid_from',
         'valid_to',
@@ -44,7 +53,7 @@ class Offer extends Model
     public $rules = [
         'name'        => 'required|string',
         'promocode'   => 'required|string',
-        'value'       => 'required|float', 
+        'value'       => 'required|float',
         'description' => 'required|string',
         'valid_from'  => 'nullable|date',
         'valid_to'    => 'nullable|date',
@@ -53,7 +62,7 @@ class Offer extends Model
 
     /**
      * The plan relation.
-     * 
+     *
      * @return \App\Plan
      */
     public function plan()
