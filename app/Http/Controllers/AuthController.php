@@ -9,16 +9,16 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\View;
 
 /**
- * This is the app controller class.
+ * This is the auth controller class.
  *
  * @author Alex Broom-Roden <b.r_alex@hotmail.co.uk>
  */
-class AppController extends BaseController
+class AuthController extends BaseController
 {
     // use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index()
+    public function register()
     {
-        return View::make('index');
+        return View::make('auth.register');
     }
 }

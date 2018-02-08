@@ -12,3 +12,4 @@
 */
 
 Route::get('/', ['as' => 'index', 'uses' => 'AppController@index']);
+Route::get('/register', ['as' => 'auth.register', 'uses' => 'AuthController@register']);

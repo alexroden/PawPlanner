@@ -1,0 +1,23 @@
+body {
+    background-color: $color-purple-50;
+}
+
+.callout {
+  border-radius: 1rem;
+    &.secondary {
+        background-color: $color-purple-100;
+    }
+    &.selected {
+        background-color: $color-teal-50;
+    }
+    &.price-option {
+        cursor: pointer;
+    }
+}
+
+.button {
+    background-color: $color-purple-400;
+    &:hover {
+        background-color: $color-purple-500;
+    }
+}

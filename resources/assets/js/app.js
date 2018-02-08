@@ -15,7 +15,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('paw-planner-register', require('./components/Register.vue'))
+Vue.component('paw-planner-plan-selecter', require('./components/PlanSelector.vue'))
 
 window.Event = new Vue();
 
@@ -31,7 +32,9 @@ window.Event = new Vue();
           //
       },
       methods: {
-          //
+          dosh(value) {
+              return '£'+parseFloat(Math.round(value * 100) / 100).toFixed(2)
+          }
       }
   })
 })(window, document, jQuery)

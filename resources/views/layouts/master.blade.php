@@ -23,11 +23,12 @@
     </head>
     <body>
         <div id="app">
-            {{-- @include('partials.nav') --}}
+            @include('partials.nav')
             <br>
             @yield('content')
             {{-- @include('partials.footer') --}}
         </div>
-      <script type="text/javascript" src="{{ elixir_safe('dist/js/app.js') }}" defer></script>
+        <script type="text/javascript" src="{{ elixir_safe('dist/js/app.js') }}" defer></script>
+        
     </body>
 </html>
