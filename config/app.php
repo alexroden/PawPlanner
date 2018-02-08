@@ -176,6 +176,7 @@ return [
         /*
          * Package Service Providers...
          */
+        McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
 
         /*
          * Application Service Providers...

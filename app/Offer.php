@@ -29,9 +29,10 @@ class Offer extends Model
         'name'        => 'string',
         'promocode'   => 'string',
         'value'       => 'float',
+        'currency'    => 'string',
         'description' => 'string',
-        'valid_from'  => 'date',
-        'valid_to'    => 'date',
+        'valid_from'  => 'datetime',
+        'valid_to'    => 'datetime',
         'plan_id'     => 'int',
     ];
 
@@ -44,6 +45,7 @@ class Offer extends Model
         'name',
         'promocode',
         'value',
+        'currency',
         'description',
         'valid_from',
         'valid_to',
@@ -59,9 +61,10 @@ class Offer extends Model
         'name'        => 'required|string',
         'promocode'   => 'required|string',
         'value'       => 'required|float',
+        'currency'    => 'required!string',
         'description' => 'required|string',
-        'valid_from'  => 'nullable|date',
-        'valid_to'    => 'nullable|date',
+        'valid_from'  => 'nullable|datetime',
+        'valid_to'    => 'nullable|datetime',
         'plan_id'     => 'nullable|int',
     ];
 
@@ -73,5 +76,15 @@ class Offer extends Model
     public function plan()
     {
         return $this->hasOne(Plan::class);
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'promocode';
     }
 }

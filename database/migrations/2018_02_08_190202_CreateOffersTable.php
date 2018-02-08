@@ -27,6 +27,7 @@ class CreateOffersTable extends Migration
             $table->string('name');
             $table->string('promocode')->unique();
             $table->float('value')->unsigned();
+            $table->string('currency');
             $table->string('description')->nullable()->default(null);
             $table->timestamp('valid_from')->nullable()->default(null);
             $table->timestamp('valid_to')->nullable()->default(null);
