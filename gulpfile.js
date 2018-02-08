@@ -10,7 +10,7 @@ elixir((mix) => {
             'app.scss'
         ], 'public/dist/css/main.css', null, {
             includePaths: cssIncludePaths
-        })€
+        })
         .styles([
             'public/dist/css/main.css',
         ], 'public/dist/css/app.css', './')
