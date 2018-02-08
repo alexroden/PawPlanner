@@ -12,7 +12,7 @@ class Company extends Model
      * @var string[]
      */
     protected $casts = [
-        'name'    => 'name',
+        'name'    => 'string',
         'plan_id' => 'int',
         'rate'    => 'float', 
     ];
@@ -39,6 +39,11 @@ class Company extends Model
         'rate'    => 'required|float', 
     ];
 
+    /**
+     * The plan relation.
+     * 
+     * @return \App\Plan
+     */
     public function plan()
     {
         return $this->hasOne(Plan::class);
