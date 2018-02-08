@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -14,7 +23,7 @@ class Company extends Model
     protected $casts = [
         'name'    => 'string',
         'plan_id' => 'int',
-        'rate'    => 'float', 
+        'rate'    => 'float',
     ];
 
     /**
@@ -25,7 +34,7 @@ class Company extends Model
     protected $fillable = [
         'name',
         'plan_id',
-        'rate', 
+        'rate',
     ];
 
     /**
@@ -36,12 +45,12 @@ class Company extends Model
     public $rules = [
         'name'    => 'required|name',
         'plan_id' => 'required|int',
-        'rate'    => 'required|float', 
+        'rate'    => 'required|float',
     ];
 
     /**
      * The plan relation.
-     * 
+     *
      * @return \App\Plan
      */
     public function plan()
@@ -51,7 +60,7 @@ class Company extends Model
 
     /**
      * The user relation.
-     * 
+     *
      * @return \App\User
      */
     public function users()
