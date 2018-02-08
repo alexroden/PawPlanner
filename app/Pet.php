@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -7,10 +16,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pet extends Model
 {
     /**
-    * The type, defining a dog.
-    *
-    * @var int
-    */
+     * The type, defining a dog.
+     *
+     * @var int
+     */
     const TYPE_DOG = 0;
 
     /**
@@ -28,7 +37,7 @@ class Pet extends Model
     protected $casts = [
         'client_id' => 'int',
         'name'      => 'string',
-        'type'      => 'int', 
+        'type'      => 'int',
         'breed'     => 'string',
         'medical'   => 'string',
         'info'      => 'string',
@@ -42,7 +51,7 @@ class Pet extends Model
     protected $fillable = [
         'client_id',
         'name',
-        'type', 
+        'type',
         'breed',
         'medical',
         'info',
@@ -56,7 +65,7 @@ class Pet extends Model
     public $rules = [
         'client_id' => 'required|int',
         'name'      => 'required|string',
-        'type'      => 'required|int', 
+        'type'      => 'required|int',
         'breed'     => 'nullable|string',
         'medical'   => 'nullable|string',
         'info'      => 'nullable|string',
@@ -64,7 +73,7 @@ class Pet extends Model
 
     /**
      * The client relation.
-     * 
+     *
      * @return \App\Client
      */
     public function client()
@@ -74,9 +83,9 @@ class Pet extends Model
 
     /**
      * Scope dogs.
-     * 
+     *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeDogs(Builder $query)
@@ -86,9 +95,9 @@ class Pet extends Model
 
     /**
      * Scope cats.
-     * 
+     *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeCats(Builder $query)

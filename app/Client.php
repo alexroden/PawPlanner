@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -14,7 +23,7 @@ class Client extends Model
     protected $casts = [
         'first_name' => 'string',
         'last_name'  => 'string',
-        'email'      => 'string', 
+        'email'      => 'string',
         'phone'      => 'string',
         'address'    => 'string',
     ];
@@ -27,7 +36,7 @@ class Client extends Model
     protected $fillable = [
         'first_name',
         'last_name',
-        'email', 
+        'email',
         'phone',
         'address',
     ];
@@ -40,7 +49,7 @@ class Client extends Model
     public $rules = [
         'first_name' => 'required|string',
         'last_name'  => 'required|string',
-        'email'      => 'nullable|string', 
+        'email'      => 'nullable|string',
         'phone'      => 'nullable|string',
         'address'    => 'nullable|string',
     ];

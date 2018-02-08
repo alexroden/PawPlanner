@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -14,7 +23,7 @@ class Appointment extends Model
     protected $casts = [
         'user_id'           => 'int',
         'pet_id'            => 'string',
-        'schedule_start_at' => 'int', 
+        'schedule_start_at' => 'int',
         'schedule_end_at'   => 'string',
         'actual_start_at'   => 'string',
         'actual_end_at'     => 'string',
@@ -28,7 +37,7 @@ class Appointment extends Model
     protected $fillable = [
         'user_id',
         'pet_id',
-        'schedule_start_at', 
+        'schedule_start_at',
         'schedule_end_at',
         'actual_start_at',
         'actual_end_at',
@@ -42,7 +51,7 @@ class Appointment extends Model
     public $rules = [
         'user_id'           => 'required|int',
         'pet_id'            => 'required|string',
-        'schedule_start_at' => 'nullable|int', 
+        'schedule_start_at' => 'nullable|int',
         'schedule_end_at'   => 'nullable|string',
         'actual_start_at'   => 'nullable|string',
         'actual_end_at'     => 'nullable|string',
@@ -50,7 +59,7 @@ class Appointment extends Model
 
     /**
      * The user relation.
-     * 
+     *
      * @return \App\User
      */
     public function user()
@@ -60,7 +69,7 @@ class Appointment extends Model
 
     /**
      * The pet relation.
-     * 
+     *
      * @return \App\Pet
      */
     public function pet()

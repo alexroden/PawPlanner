@@ -1,9 +1,18 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -15,10 +24,10 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $casts = [
-        'username'   => 'string', 
+        'username'   => 'string',
         'first_name' => 'string',
         'last_name'  => 'string',
-        'email'      => 'string', 
+        'email'      => 'string',
         'password'   => 'string',
         'company_id' => 'int',
     ];
@@ -29,10 +38,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 
+        'username',
         'first_name',
         'last_name',
-        'email', 
+        'email',
         'password',
         'company_id',
     ];
@@ -43,10 +52,10 @@ class User extends Authenticatable
      * @var string[]
      */
     public $rules = [
-        'username'   => 'required|string', 
+        'username'   => 'required|string',
         'first_name' => 'required|string',
         'last_name'  => 'required|string',
-        'email'      => 'required|string', 
+        'email'      => 'required|string',
         'password'   => 'required|string',
         'company_id' => 'nullable|int',
     ];
@@ -57,13 +66,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 
+        'password',
         'remember_token',
     ];
 
     /**
      * The company relation.
-     * 
+     *
      * @return \App\Company
      */
     public function company()
