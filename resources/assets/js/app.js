@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('paw-planner-register', require('./components/Register.vue'))
 Vue.component('paw-planner-plan-selecter', require('./components/PlanSelector.vue'))
+Vue.component('paw-planner-offer-input', require('./components/OfferInput.vue'))
 
 window.Event = new Vue();
 

@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="columns large-8 large-offset-2">
-            <div class="callout secondary">
+            <div class="register">
                 <div class="row">
                     <div class="columns small-12 text-center"><h3>Register</h3></div>
                 </div>
@@ -39,6 +39,7 @@
                     </div>
                 </div>
                 <paw-planner-plan-selecter :plans="plans"></paw-planner-plan-selecter>
+                <paw-planner-offer-input></paw-planner-offer-input>
                 <div class="text-center">
                     <button type="submit" class="button" @click.prevent="submit">Register</button>
                 </div>

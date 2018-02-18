@@ -15,6 +15,7 @@
         <title>@yield('pageTitle', 'Paw Planner')</title>
 
         <link rel="stylesheet" type="text/css" href="{{ elixir_safe('dist/css/app.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
         @stack('headerStyles')
 
         @stack('headerScripts')

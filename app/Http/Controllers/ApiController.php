@@ -22,6 +22,13 @@ use Illuminate\Support\Facades\View;
  */
 class ApiController extends AbstractApiController
 {
+    /**
+     * This handles validating offers.
+     * 
+     * @param \App\Offer $offer
+     * 
+     * @return mixed
+     */
     public function offerValidation(Offer $offer)
     {
         if ($offer->valid_from <= Carbon::now() && $offer->valid_to >= Carbon::now()) {
