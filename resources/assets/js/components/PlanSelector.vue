@@ -6,8 +6,8 @@
         <div class="columns small-3" v-for="(p, i) in JSON.parse(plans)">
             <div class="callout price-option text-center" :class="{ 'selected' : (i+1) === plan }" @click.prevent="selectPlan(i+1)">
                 <p><strong>{{ p.description }}</strong></p>
-                <p>Cost: {{ $root.dosh(totalValue(p.value)) }}</p>
-                <span v-if="discountValue"></span>
+                <p class="price">Cost: {{ $root.dosh(totalValue(p.value)) }}</p>
+                <p class="discounted" v-if="discountValue">{{ valueOfDiscount(p.value) }}</p>
                 <input type="radio" name="plan" :value="i+1" v-model="plan">
             </div>
         </div>
@@ -40,7 +40,7 @@
                 if (this.discountValue) {
                     let discountedValue = 0
                     if (this.discountCurrency && this.discountCurrency === '%') {
-                        discountedValue = Math.round(Math.abs(value * (this.discountValue / 100) * 100)) / 100
+                        discountedValue = this.$root.percentage(value, this.discountValue)
                         discountedValue = value - discountedValue
                     } else {
                         discountedValue = value - this.discountValue
@@ -55,8 +55,24 @@
 
                 return value
             },
-            valueOfDiscount() {
+            valueOfDiscount(value) {
+                if (this.discountValue) {
+                    let discountedValue = 0
+                    if (this.discountCurrency && this.discountCurrency === '%') {
+                        discountedValue = this.$root.percentage(value, this.discountValue)
+                    } else {
+                        discountedValue = this.discountValue
+                    }
 
+                    if (discountedValue <= 0) {
+                        return
+                    }
+
+                    
+                    return `-${this.$root.dosh(discountedValue)}`
+                }
+
+                return
             }
         }
     }

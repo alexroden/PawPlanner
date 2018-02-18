@@ -35,6 +35,9 @@ window.Event = new Vue();
       methods: {
           dosh(value) {
               return '£'+parseFloat(Math.round(value * 100) / 100).toFixed(2)
+          },
+          percentage(value, percentage) {
+              return Math.round(Math.abs(value * (percentage / 100) * 100)) / 100
           }
       }
   })

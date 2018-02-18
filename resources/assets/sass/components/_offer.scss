@@ -10,3 +10,14 @@
         color: $color-red-a400;
     }
 }
+.price-option {
+    .price {
+        margin-bottom: 0 !important;
+    }
+    .discounted {
+        font-size: 0.75rem;
+        color: $color-red-a400;
+        padding: 0;
+        margin: 0 0 0 0.5rem !important;
+    }
+}
