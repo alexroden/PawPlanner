@@ -25,9 +25,9 @@
             }
         },
         mounted() {
-            Event.$on('offer-applied', (value, currency) => {
-                this.discountValue = value
-                this.discountCurrency = currency
+            Event.$on('offer-applied', (promo) => {
+                this.discountValue = promo.value
+                this.discountCurrency = promo.currency
             })
         },
         methods: {
@@ -68,7 +68,6 @@
                         return
                     }
 
-                    
                     return `-${this.$root.dosh(discountedValue)}`
                 }
 

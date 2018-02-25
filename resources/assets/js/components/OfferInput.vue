@@ -39,7 +39,7 @@
                       this.validPromo = response.data.data
                       this.promoApplied = true
                       this.promoValid = true
-                      Event.$emit('offer-applied', this.validPromo.value, this.validPromo.currency)
+                      Event.$emit('offer-applied', this.validPromo)
                   }).catch((error) => {
                       this.promoApplied = true
                       this.promoValid = false

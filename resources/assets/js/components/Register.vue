@@ -11,7 +11,8 @@
                         <label for="username" class="text-left middle">Username:</label>
                     </div>
                     <div class="columns small-9">
-                        <input type="text" name="username" v-model="username" v-validate="'required'">
+                        <input type="text" name="username" v-model="username" v-validate="'required'" class="no-margin" :class="{'input-alert': errors.has('username')}">
+                        <span class="promo-error-message" v-show="errors.has('username')">{{ errors.first('username') }}</span>
                     </div>
                 </div>
                 <div class="row">
@@ -19,7 +20,8 @@
                         <label for="email" class="text-left middle">Email:</label>
                     </div>
                     <div class="columns small-9">
-                        <input type="email" name="email" v-model="email" v-validate="'required|email'">
+                        <input type="email" name="email" v-model="email" v-validate="'required|email'" class="no-margin" :class="{'input-alert': errors.has('email')}">
+                        <span class="promo-error-message" v-show="errors.has('email')">{{ errors.first('email') }}</span>
                     </div>
                 </div>
                 <div class="row">
@@ -27,7 +29,8 @@
                         <label for="password" class="text-left middle">Password:</label>
                     </div>
                     <div class="columns small-9">
-                        <input type="password" name="password" v-model="password" v-validate="'required'">
+                        <input type="password" name="password" v-model="password" v-validate="'required'" class="no-margin" :class="{'input-alert': errors.has('password')}">
+                        <span class="promo-error-message" v-show="errors.has('password')">{{ errors.first('password') }}</span>
                     </div>
                 </div>
                 <div class="row">
@@ -35,7 +38,8 @@
                         <label for="confirm_password" class="text-left middle">Confirm Password:</label>
                     </div>
                     <div class="columns small-9">
-                        <input type="password" name="confirm_password" v-model="confirm_password" v-validate="'required'">
+                        <input type="password" name="confirm_password" v-model="confirm_password" v-validate="'required|confirmed:password'" class="no-margin" :class="{'input-alert': errors.has('confirm_password')}">
+                        <span class="promo-error-message" v-show="errors.has('confirm_password')">{{ errors.first('confirm_password') }}</span>
                     </div>
                 </div>
                 <paw-planner-plan-selecter :plans="plans"></paw-planner-plan-selecter>
@@ -61,12 +65,19 @@
                 password: null,
                 confirm_password: null,
                 plan: 1,
+                promoApplied: false,
+                promocode: null,
             }
         },
         mounted() {
             Event.$on('plan-change', (plan) => {
                 this.plan = plan
-            })  
+            })
+
+            Event.$on('offer-applied', (promo) => {
+                this.promoApplied = true
+                this.promocode = promo.promocode
+            })
         },
         methods: {
             submit() {
