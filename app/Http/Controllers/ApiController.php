@@ -24,9 +24,9 @@ class ApiController extends AbstractApiController
 {
     /**
      * This handles validating offers.
-     * 
+     *
      * @param \App\Offer $offer
-     * 
+     *
      * @return mixed
      */
     public function offerValidation(Offer $offer)
