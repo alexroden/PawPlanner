@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Providers;
+namespace App\Foundation\Providers;
 
+use AltThree\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -25,9 +26,11 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Dispatcher $dispatcher)
     {
-        //
+        $dispatcher->mapUsing(function ($command) {
+            return Dispatcher::simpleMapping($command, 'App\Bus', 'App\Bus\Handlers');
+        });
     }
 
     /**

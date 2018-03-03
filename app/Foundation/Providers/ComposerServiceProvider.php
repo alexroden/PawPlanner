@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Providers;
+namespace App\Foundation\Providers;
 
 use App\Composers\UserComposer;
 use Illuminate\Contracts\View\Factory;

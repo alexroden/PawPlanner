@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Providers;
+namespace App\Foundation\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;

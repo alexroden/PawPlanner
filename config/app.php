@@ -152,7 +152,7 @@ return [
          */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
-        Illuminate\Bus\BusServiceProvider::class,
+        // Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
@@ -176,17 +176,20 @@ return [
         /*
          * Package Service Providers...
          */
+        AltThree\Bus\BusServiceProvider::class,
+        GrahamCampbell\Security\SecurityServiceProvider::class,
+        GrahamCampbell\Binput\BinputServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\ComposerServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        App\Foundation\Providers\AppServiceProvider::class,
+        App\Foundation\Providers\AuthServiceProvider::class,
+        // App\Foundation\Providers\BroadcastServiceProvider::class,
+        App\Foundation\Providers\ComposerServiceProvider::class,
+        App\Foundation\Providers\EventServiceProvider::class,
+        App\Foundation\Providers\RouteServiceProvider::class,
 
     ],
 
