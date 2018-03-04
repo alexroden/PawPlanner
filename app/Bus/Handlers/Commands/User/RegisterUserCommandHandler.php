@@ -1,9 +1,17 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App\Bus\Handlers\Commands\User;
 
 use App\Bus\Commands\User\RegisterUserCommand;
-use Illuminate\Support\Facades\Validator;
 
 /**
  * This is the register user command class.
@@ -14,9 +22,9 @@ class RegisterUserCommandHandler
 {
     /**
      * Handle the register user command.
-     * 
-     * @param  \App\Bus\Commands\User\RegisterUserCommand $command
-     * 
+     *
+     * @param \App\Bus\Commands\User\RegisterUserCommand $command
+     *
      * @return void
      */
     public function handle(RegisterUserCommand $command)
@@ -26,17 +34,15 @@ class RegisterUserCommandHandler
 
     /**
      * Validate the user data.
-     * 
-     * @param  \App\Bus\Commands\User\RegisterUserCommand $command
-     * 
-     * @return void
+     *
+     * @param \App\Bus\Commands\User\RegisterUserCommand $command
      *
      * @throws ValidationException
+     *
+     * @return void
      */
     protected function validate(RegisterUserCommand $command)
     {
-        
-
         dd('here');
     }
 }
