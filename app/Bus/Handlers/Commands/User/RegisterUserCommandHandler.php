@@ -29,20 +29,6 @@ class RegisterUserCommandHandler
      */
     public function handle(RegisterUserCommand $command)
     {
-        $this->validate($command);
-    }
-
-    /**
-     * Validate the user data.
-     *
-     * @param \App\Bus\Commands\User\RegisterUserCommand $command
-     *
-     * @throws ValidationException
-     *
-     * @return void
-     */
-    protected function validate(RegisterUserCommand $command)
-    {
-        dd('here');
+        dd($command);
     }
 }

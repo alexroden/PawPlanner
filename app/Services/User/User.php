@@ -15,8 +15,9 @@ use App\Bus\Commands\User\RegisterUserCommand;
 use App\Exceptions\Http\MissingDataException;
 use App\Exceptions\Http\ValidationFailureException;
 use App\Services\Entity;
+use Illuminate\Support\Facades\Validator;
 
-class User implements Entity
+class User extends Entity
 {
     /**
      * Handles creating a user.

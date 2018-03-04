@@ -48,9 +48,9 @@ abstract class Entity implements Arrayable, Jsonable
      *
      * @return void
      */
-    public function __construct($model)
+    public function __construct($model = null)
     {
-        $this->model = $model instanceof Model AutoPresenter::decorate($model) : $model;
+        $this->model = $model instanceof Model ? AutoPresenter::decorate($model) : $model;
         $this->cache = app(Cache::class);
     }
 
@@ -76,7 +76,7 @@ abstract class Entity implements Arrayable, Jsonable
     public function with(...$key)
     {
         foreach ($key as $attr) {
-            $this->appends[attr[0]] = $attr[1] ?? nulll
+            $this->appends[attr[0]] = $attr[1] ?? null;
         }
 
         return $this;
@@ -89,7 +89,7 @@ abstract class Entity implements Arrayable, Jsonable
      */
     public function withEverything()
     {
-        $class = new ReflectionClass($this);\
+        $class = new ReflectionClass($this);
 
         $classMethods = $class->getMethods(ReflectionClass::IS_PUBLIC | ReflectionClass::IS_FINAL);
 

@@ -21,16 +21,16 @@ class ValidationFailureException extends BadRequestHttpException implements Http
      *
      * @return void
      */
-    public function __construct(array $messages = [], Exception $previous, $code= 0)
+    public function __construct(array $messages = [], Exception $previous = null, $code = 0)
     {
         $errorMessage = '';
         if (empty($messages)) {
-            $errorMessage = 'Validation failure.'
+            $errorMessage = 'Validation failure.';
         } else {
-            $messageCount = count($messages);
+            $count = count($messages);
 
             foreach ($messages as $key => $message) {
-                $errorMessage =. ($key + 1) < $count ? $messages.',' : $messages;
+                $errorMessage .= ($key + 1) < $count ? $message.',' : $message;
             }
         }
 

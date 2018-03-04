@@ -13,6 +13,7 @@ namespace App\Http\Controllers;
 
 use App\Bus\Commands\User\RegisterUserCommand;
 use App\Offer;
+use App\Services\User\User;
 use Carbon\Carbon;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Support\Facades\View;
@@ -47,13 +48,8 @@ class ApiController extends AbstractApiController
      */
     public function register()
     {
-        dispatch(new RegisterUserCommand(
-            Binput::get('username'),
-            Binput::get('email'),
-            Binput::get('password'),
-            Binput::get('confirm_password'),
-            Binput::get('plan'),
-            json_decode(Binput::get('promo'))
-        ));
+        $user = new User();
+
+        $user->create(Binput::all());
     }
 }

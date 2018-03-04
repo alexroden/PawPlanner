@@ -21,10 +21,10 @@ class MissingDataException extends BadRequestHttpException implements HttpExcept
      *
      * @return void
      */
-    public function __construct($message = null, Exception $previous, $code= 0)
+    public function __construct($message = null, Exception $previous = null, $code = 0)
     {
         if (!$message) {
-            $message = 'Missing data.'
+            $message = 'Missing data.';
         }
 
         parent::__construct($message, $previous, $code);
