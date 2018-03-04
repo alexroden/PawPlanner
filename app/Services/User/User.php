@@ -15,24 +15,28 @@ class User implements Entity
      */
     public function validate(array $data = [])
     {
-        $validator = Validator::make([
-            'username'              => $command->username,
-            'email'                 => $command->email,
-            'password'              => $command->password,
-            'password_confirmation' => $command->confirmPassword,
-            'plan'                  => (int) $command->plan,
-        ], [
-            'username'              => 'required|unique:users',
-            'email'                 => 'required|unique:users',
-            'password'              => 'required|min:5|confirmed',
-            'password_confirmation' => 'required|min:5',
-            'plan'                  => 'required|integer',
-        ]);
+        if (!empty($data)) {
+            $validator = Validator::make([
+                'username'              => array_get($data, 'username'),
+                'email'                 => array_get($data, 'email'),
+                'password'              => array_get($data, 'password'),
+                'password_confirmation' => array_get($data, 'confirmPassword'),
+                'plan'                  => array_get($data, 'plan'),
+            ], [
+                'username'              => 'required|unique:users',
+                'email'                 => 'required|unique:users',
+                'password'              => 'required|min:5|confirmed',
+                'password_confirmation' => 'required|min:5',
+                'plan'                  => 'required|integer',
+            ]);
 
-        if ($validator->fails()) {
-            throw new $validator->getMessageBag()->all();
+            if ($validator->fails()) {
+                throw new ValidationFailureException($validator->getMessageBag()->all());
+            }
+
+            return true;
         }
 
-        return true;
+        throw new MissingDataException();
     }
 }

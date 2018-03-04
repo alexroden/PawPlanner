@@ -5,11 +5,14 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.0.0",
+        "alt-three/bus": "^3.0",
         "fideloper/proxy": "~3.3",
+        "graham-campbell/binput": "^4.0", 
+        "graham-campbell/exceptions": "^11.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "mccool/laravel-auto-presenter": "^6.2"
+        "mccool/laravel-auto-presenter": "^6.2",
+        "php": ">=7.0.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

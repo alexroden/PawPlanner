@@ -177,8 +177,9 @@ return [
          * Package Service Providers...
          */
         AltThree\Bus\BusServiceProvider::class,
-        GrahamCampbell\Security\SecurityServiceProvider::class,
         GrahamCampbell\Binput\BinputServiceProvider::class,
+        GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
+        GrahamCampbell\Security\SecurityServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
 
         /*
