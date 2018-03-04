@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App\Bus\Commands\User;
 
 /**
@@ -11,49 +20,49 @@ final class RegisterUserCommand
 {
     /**
      * This is the user's username.
-     * 
+     *
      * @var string
      */
     public $username;
 
     /**
      * This is the user's email.
-     * 
+     *
      * @var string
      */
     public $email;
 
     /**
      * This is the user's password.
-     * 
+     *
      * @var string
      */
     public $password;
 
     /**
      * This is the user's password confirmation.
-     * 
+     *
      * @var string
      */
     public $confirmPassword;
 
     /**
      * This is the user's chosen plan.
-     * 
+     *
      * @var string
      */
     public $plan;
 
     /**
      * This is the user's promo.
-     * 
+     *
      * @var string
      */
     public $promo;
 
     /**
      * The validation rule.
-     * 
+     *
      * @var string[]
      */
     public $rule = [
@@ -86,5 +95,4 @@ final class RegisterUserCommand
         $this->plan = $plan;
         $this->promo = $promo;
     }
-
 }

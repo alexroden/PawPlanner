@@ -26,9 +26,9 @@ class ApiController extends AbstractApiController
 {
     /**
      * This handles validating offers.
-     * 
+     *
      * @param \App\Offer $offer
-     * 
+     *
      * @return mixed
      */
     public function offerValidation(Offer $offer)
@@ -42,7 +42,7 @@ class ApiController extends AbstractApiController
 
     /**
      * This handles the user registration.
-     *  
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function register()

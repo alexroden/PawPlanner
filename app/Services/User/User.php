@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App\Services\User;
 
 use App\Bus\Commands\User\RegisterUserCommand;
@@ -11,18 +20,19 @@ class User implements Entity
 {
     /**
      * Handles creating a user.
-     * 
+     *
      * @param array $data
-     * 
-     * @return $this
      *
      * @throws \App\Exceptions\Http\MissingDataException
+     *
+     * @return $this
      */
     public function create(array $data = [])
     {
         if (!empty($data)) {
             if ($this->validate($data)) {
                 $username = array_get($data, 'username');
+
                 try {
                     dispatch(new RegisterUserCommand(
                         $username,
@@ -36,7 +46,7 @@ class User implements Entity
                     // Implement bugsnag here.
                 }
 
-                $user = User::findByUsername($username)->first();
+                $user = self::findByUsername($username)->first();
 
                 return new static($user);
             }
@@ -49,11 +59,11 @@ class User implements Entity
      * Validate the user.
      *
      * @param array $data
-     * 
-     * @return bool
      *
      * @throws \App\Exceptions\Http\ValidationFailureException
      * @throws \App\Exceptions\Http\MissingDataException
+     *
+     * @return bool
      */
     public function validate(array $data = [])
     {
