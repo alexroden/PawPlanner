@@ -11,7 +11,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Bus\Commands\User\RegisterUserCommand;
 use App\Offer;
 use App\Services\User\User;
 use Carbon\Carbon;

@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of PawPlanner.
+ *
+ * (c) Alex Broom-Roden <b.r_alex@hotmail.co.uk>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App\Services;
 
 use Illuminate\Cache\Repository as Cache;
@@ -15,7 +24,7 @@ abstract class Entity implements Arrayable, Jsonable
 {
     /**
      * Methods that should be included in the array representation of the entity.
-     * 
+     *
      * @var string[]
      */
     protected $attributes = [];
@@ -55,7 +64,7 @@ abstract class Entity implements Arrayable, Jsonable
     }
 
     /**
-     * Create a new entity instance if the value isn't already one. 
+     * Create a new entity instance if the value isn't already one.
      *
      * @param mixed $model
      *
@@ -68,9 +77,9 @@ abstract class Entity implements Arrayable, Jsonable
 
     /**
      * Add a method to the entity.
-     * 
+     *
      * @param string $key
-     * 
+     *
      * @return $this
      */
     public function with(...$key)
@@ -105,12 +114,12 @@ abstract class Entity implements Arrayable, Jsonable
 
     /**
      * Get a property from the model.
-     * 
+     *
      * @param string $key
      *
-     * @return mixed
-     *
      * @throws \InvalidArgumentException
+     *
+     * @return mixed
      */
     public function __get($key)
     {
@@ -177,7 +186,6 @@ abstract class Entity implements Arrayable, Jsonable
     {
         return isset($this->model->{$name});
     }
-
 
     /**
      * Get the instance as an array.
