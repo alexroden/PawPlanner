@@ -84,7 +84,23 @@
                 this.$validator
                     .validateAll()
                     .then(() => {
-                        console.log('here')
+                        window.axios.get('/api/register', {
+                            params: {
+                                username: this.username,
+                                email: this.email,
+                                password: this.password,
+                                confirm_password: this.confirm_password,
+                                plan: this.plan,
+                                promo: {
+                                    applied: this.promoApplied,
+                                    code: this.promocode
+                                }
+                            }
+                        }).then(response => {
+                            console.log(response);
+                        }).catch(error => {
+                            console.log(error);
+                        })
                     })
             }
         }

@@ -84,4 +84,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Company::class);
     }
+
+    public static function findByUsername($username, array $columns = ['*'])
+    {
+        return static::where('username', '=', $username)->get();
+    }
 }

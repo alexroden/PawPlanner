@@ -26,3 +26,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::match(['post', 'get'], '/offers/{offer}/validate', 'ApiController@offerValidation');
+Route::match(['post', 'get'], '/register', 'ApiController@register');
